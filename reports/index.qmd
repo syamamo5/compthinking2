@@ -151,8 +151,8 @@ find_hatching_beach <- function(site, date) {
   bird_observations <- tibble(site, date)
   result <- bird_observations %>%
     add_count(site) %>% 
-    filter(n==max(n)) %>%
-    filter(date==min(date)) %>% 
+    filter(n == max(n)) %>%
+    filter(date == min(date)) %>% 
     sample_n(1) %>% 
     select(site)
   return(result$site) # return the hatching beach
